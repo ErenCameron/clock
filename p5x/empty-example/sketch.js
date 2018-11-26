@@ -2,9 +2,7 @@ var expandera = (250); //used for interactive ellipse
 var expanderb = (0); //used for interactive ellipse
 
 function setup() {
-    createCanvas(500,500); 
-
-    
+    createCanvas(500,500);     
 }
 
 function draw() {
@@ -30,7 +28,7 @@ function draw() {
     
     } else {
        ellipse(expandera,expandera,expanderb,expanderb);
-  }
+    }
     if (mouseIsPressed) {
         stroke(0,0,0);
     }else{
@@ -50,19 +48,17 @@ function draw() {
     line(190,220,130,180) //10 o'clock
     line(220,180,170,110) //11 o'clock
 
-    push();
-    rectMode(CENTER);
-    translate(250,250);
-
-
-    rotate(frameCount * PI / 50);
-    rect(0,20,8,40,[],[],[330,110],[]);
+    push();  
+        rectMode(CENTER); //ensures the rotation of the rect will occur at its center
+        translate(250,250); // moves the origin of the canvas to specified point
+        rotate(frameCount * PI / 50); // rotates the clock hand
+        rect(0,20,8,40,[],[],[330,110],[]); // small clock hand
     pop();
     
     push();
-    rectMode(CENTER);
-    translate(250,250);
-    rotate(frameCount * PI / 250);
-    rect(0,32.5,15,75,[],[],[330,110],[]);
+        rectMode(CENTER); 
+        translate(250,250); 
+        rotate(frameCount * PI / 250); // rotates the clock hand at a slower speed
+        rect(0,32.5,15,75,[],[],[330,110],[]);
     pop();
 }
